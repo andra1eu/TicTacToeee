@@ -5,6 +5,7 @@ import android.support.annotation.IntegerRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.GridLayout;
 import android.widget.ImageView;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+    AndraToast toast = new AndraToast();
 
     //memoreaza tura cui ii
     int player = 0;
@@ -61,13 +63,13 @@ public class MainActivity extends AppCompatActivity {
         }
         if (verificareCastigator()) {
             if (places[tag] == 0) {
-                Toast.makeText(this, "Kity, you won!", Toast.LENGTH_SHORT).show();
+                toast.showToast(this, "Kity, you won!", R.drawable.kitty);
             } else {
-                Toast.makeText(this, "Mouse, you won!", Toast.LENGTH_SHORT).show();
+                toast.showToast(this, "Mouse, you won!", R.drawable.mouse);
             }
             reinitializare(counter);
         } else if (isDraw()) {
-            Toast.makeText(this, "It's a draw! Start again", Toast.LENGTH_LONG).show();
+            toast.showToast(this, "It's a draw! Start again", R.drawable.fish);
             reinitializare(counter);
         }
 
