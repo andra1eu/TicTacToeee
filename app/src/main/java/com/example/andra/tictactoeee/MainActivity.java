@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    AndraToast toast = new AndraToast();
 
     //memoreaza tura cui ii
     int player = 0;
@@ -63,13 +62,13 @@ public class MainActivity extends AppCompatActivity {
         }
         if (verificareCastigator()) {
             if (places[tag] == 0) {
-                toast.showToast(this, "Kity, you won!", R.drawable.kitty);
+                AndraToast.showToast(this, "Kity, you won!", R.drawable.kitty);
             } else {
-                toast.showToast(this, "Mouse, you won!", R.drawable.mouse);
+                AndraToast.showToast(this, "Mouse, you won!", R.drawable.mouse);
             }
             reinitializare(counter);
         } else if (isDraw()) {
-            toast.showToast(this, "It's a draw! Start again", R.drawable.fish);
+            AndraToast.showToast(this, "It's a draw! Start again", R.drawable.fish);
             reinitializare(counter);
         }
 

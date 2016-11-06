@@ -9,8 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class AndraToast {
-    public void showToast(Activity activity, String text,int resource){
+public  class AndraToast {
+    public static void showToast(Activity activity, String text,int resource){
 
         LayoutInflater inflater = activity.getLayoutInflater();
         View layout = inflater.inflate(R.layout.custom_toast,
